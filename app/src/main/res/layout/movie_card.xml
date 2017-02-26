@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/genresTextView"
         android:layout_alignStart="@+id/ratingTextView"
-        android:id="@+id/releasTtextView4" />
+        android:id="@+id/releaseTextView" />
 
     <TextView
         android:text="Genres"
