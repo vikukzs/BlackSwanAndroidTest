@@ -50,15 +50,18 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Movie movie = moviesList.get(position);
         holder.title.setText(movie.getTitle());
-        holder.genre.setText(movie.getGenres().toString());
+        holder.genre.setText((CharSequence) movie.getGenres());
         holder.year.setText(movie.getReleaseDateText());
         holder.overview.setText(movie.getOverview());
-        holder.rating.setText((int) movie.getAverageVote());
+//        holder.rating.setText(movie.getAverageVote());
     }
 
     @Override
     public int getItemCount() {
-        return moviesList.size();
+        if (moviesList != null) {
+            return moviesList.size();
+        }
+        return 0;
     }
 }
 
