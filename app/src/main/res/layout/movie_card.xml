@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <TextView
+        android:text="7.9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/titleTextView"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/ratingTextView" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/genresTextView"
+        android:layout_alignStart="@+id/ratingTextView"
+        android:id="@+id/releasTtextView4" />
+
+    <TextView
+        android:text="Genres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/genresTextView"
+        android:layout_below="@+id/ratingTextView"
+        android:layout_toStartOf="@+id/ratingTextView" />
+
+    <TextView
+        android:text="summary summary summary summary summary summary summary "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/genresTextView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="17dp"
+        android:id="@+id/summaryTextView"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Title of Movie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleTextView"
+        android:layout_marginTop="28dp"
+        android:layout_alignParentTop="true" />
+</RelativeLayout>
