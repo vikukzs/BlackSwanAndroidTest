@@ -1,4 +1,4 @@
-package com.greenfox.androidtest.models;
+package com.zsuzsannavikuk.androidtest.models;
 
 import com.google.gson.annotations.SerializedName;
 

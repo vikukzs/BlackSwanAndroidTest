@@ -1,11 +1,12 @@
-package com.greenfox.androidtest;
+package com.zsuzsannavikuk.androidtest;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.greenfox.androidtest.models.LoadPopularMoviesResponse;
-import com.greenfox.androidtest.network.MovieDbManager;
+import com.greenfox.androidtest.R;
+import com.zsuzsannavikuk.androidtest.models.LoadPopularMoviesResponse;
+import com.zsuzsannavikuk.androidtest.network.MovieDbManager;
 
 import retrofit2.Call;
 import retrofit2.Callback;

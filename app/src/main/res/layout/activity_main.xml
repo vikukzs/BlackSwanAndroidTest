@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:gravity="center"
-    tools:context="com.greenfox.androidtest.MainActivity">
+    tools:context="com.greenfox.androidtest.com.zsuzsannavikuk.androidtest.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"

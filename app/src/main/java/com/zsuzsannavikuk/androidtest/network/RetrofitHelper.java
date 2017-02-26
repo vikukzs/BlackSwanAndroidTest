@@ -1,4 +1,4 @@
-package com.greenfox.androidtest.network;
+package com.zsuzsannavikuk.androidtest.network;
 
 import java.io.IOException;
 

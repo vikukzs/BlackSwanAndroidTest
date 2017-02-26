@@ -1,6 +1,6 @@
-package com.greenfox.androidtest.network;
+package com.zsuzsannavikuk.androidtest.network;
 
-import com.greenfox.androidtest.models.LoadPopularMoviesResponse;
+import com.zsuzsannavikuk.androidtest.models.LoadPopularMoviesResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
