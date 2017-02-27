@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
                 movies = new ArrayList<>();
                 loadPopularMoviesResponse = response.body();
                 movies = loadPopularMoviesResponse.getMovies();
-                MoviesAdapter mAdapter = new MoviesAdapter(movies);
+                MoviesAdapter mAdapter = new MoviesAdapter(getApplicationContext(), movies);
                 RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
                 recyclerView.setLayoutManager(mLayoutManager);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());

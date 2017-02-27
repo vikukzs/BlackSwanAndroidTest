@@ -55,32 +55,12 @@ public class Movie implements Serializable {
         return posterPath;
     }
 
-    public void setPosterPath(String posterPath) {
-        this.posterPath = posterPath;
-    }
-
-    public boolean isAdult() {
-        return isAdult;
-    }
-
-    public void setAdult(boolean adult) {
-        isAdult = adult;
-    }
-
     public String getOverview() {
         return overview;
     }
 
-    public void setOverview(String overview) {
-        this.overview = overview;
-    }
-
     public String getReleaseDateText() {
         return releaseDateText;
-    }
-
-    public void setReleaseDateText(String releaseDateText) {
-        this.releaseDateText = releaseDateText;
     }
 
     public List<Integer> getGenreIdList() {
@@ -170,4 +150,6 @@ public class Movie implements Serializable {
     public void setAverageVote(float averageVote) {
         this.averageVote = averageVote;
     }
+
 }
+
