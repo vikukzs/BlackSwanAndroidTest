@@ -6,18 +6,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-
 import com.squareup.picasso.Picasso;
 import com.zsuzsannavikuk.androidtest.R;
 import com.zsuzsannavikuk.androidtest.activities.DetailedActivity;
 import com.zsuzsannavikuk.androidtest.models.Movie;
 import com.zsuzsannavikuk.androidtest.network.MovieDbManager;
-
 import java.util.List;
 
 /**
@@ -45,17 +40,12 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
             poster = (ImageView) view.findViewById(R.id.poster_image);
             starImage = (ImageView) view.findViewById(R.id.star_image);
             moreInfo = (TextView) view.findViewById(R.id.moreTextView);
-
         }
     }
-
-
-
 
     public MoviesAdapter(Context context, List<Movie> moviesList) {
         this.context = context;
         this.moviesList = moviesList;
-
     }
 
     @Override
@@ -84,7 +74,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
                 context.startActivity(intent);
             }
         });
-
     }
 
     @Override

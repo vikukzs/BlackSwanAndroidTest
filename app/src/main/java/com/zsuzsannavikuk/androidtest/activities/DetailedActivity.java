@@ -1,14 +1,10 @@
 package com.zsuzsannavikuk.androidtest.activities;
 
-import android.app.Activity;
-import android.app.VoiceInteractor;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,8 +32,6 @@ public class DetailedActivity extends AppCompatActivity {
 
         movie = (Movie) getIntent().getSerializableExtra("movie");
 
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.MyToolbar);
-
         toolbarBackground = (ImageView) findViewById(R.id.toolbar_background);
         Picasso.with(getApplicationContext())
                 .load(movieDbManager.IMAGE_BASE_URL+movie.getPosterPath())
@@ -47,7 +41,6 @@ public class DetailedActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapse_toolbar);
-//        collapsingToolbarLayout.setTitle(movie.getTitle());
 
         title = (TextView)  findViewById(R.id.movieTitle);
         title.setText(movie.getTitle());
@@ -62,9 +55,7 @@ public class DetailedActivity extends AppCompatActivity {
 
         ratingStar = (ImageView) findViewById(R.id.ratingStar);
         calendar = (ImageView) findViewById(R.id.calendar);
-
-
-
-
     }
 }
+
+

@@ -67,16 +67,8 @@ public class Movie implements Serializable {
         return genreIdList;
     }
 
-    public void setGenreIdList(List<Integer> genreIdList) {
-        this.genreIdList = genreIdList;
-    }
-
     public List<Genre> getGenres() {
         return genres;
-    }
-
-    public void setGenres(List<Genre> genres) {
-        this.genres = genres;
     }
 
     public int getId() {
@@ -91,16 +83,8 @@ public class Movie implements Serializable {
         return originalTitle;
     }
 
-    public void setOriginalTitle(String originalTitle) {
-        this.originalTitle = originalTitle;
-    }
-
     public String getOriginalLanguage() {
         return originalLanguage;
-    }
-
-    public void setOriginalLanguage(String originalLanguage) {
-        this.originalLanguage = originalLanguage;
     }
 
     public String getTitle() {
@@ -115,40 +99,20 @@ public class Movie implements Serializable {
         return backdropPath;
     }
 
-    public void setBackdropPath(String backdropPath) {
-        this.backdropPath = backdropPath;
-    }
-
     public float getPopularity() {
         return popularity;
-    }
-
-    public void setPopularity(float popularity) {
-        this.popularity = popularity;
     }
 
     public int getVoteCount() {
         return voteCount;
     }
 
-    public void setVoteCount(int voteCount) {
-        this.voteCount = voteCount;
-    }
-
     public boolean isVideo() {
         return video;
     }
 
-    public void setVideo(boolean video) {
-        this.video = video;
-    }
-
     public float getAverageVote() {
         return averageVote;
-    }
-
-    public void setAverageVote(float averageVote) {
-        this.averageVote = averageVote;
     }
 
 }
