@@ -1,16 +1,21 @@
 package com.zsuzsannavikuk.androidtest.activities;
 
 import android.app.Activity;
+import android.app.VoiceInteractor;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import com.zsuzsannavikuk.androidtest.R;
 import com.zsuzsannavikuk.androidtest.models.Movie;
+import com.zsuzsannavikuk.androidtest.network.MovieDbManager;
 
 /**
  * Created by Zsuzska on 2017. 02. 28..
@@ -19,8 +24,9 @@ import com.zsuzsannavikuk.androidtest.models.Movie;
 public class DetailedActivity extends AppCompatActivity {
 
     TextView title, releaseDate, rating, overview, overviewTitle;
-    ImageView ratingStar, calendar;
+    ImageView ratingStar, calendar, toolbarBackground;
     Movie movie;
+    MovieDbManager movieDbManager;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -30,9 +36,19 @@ public class DetailedActivity extends AppCompatActivity {
 
         movie = (Movie) getIntent().getSerializableExtra("movie");
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(movie.getTitle());
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.MyToolbar);
+
+        toolbarBackground = (ImageView) findViewById(R.id.toolbar_background);
+        Picasso.with(getApplicationContext())
+                .load(movieDbManager.IMAGE_BASE_URL+movie.getPosterPath())
+                .placeholder(R.drawable.ic_star_black_18dp)
+                .error(R.drawable.ic_star_black_18dp)
+                .into(toolbarBackground);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapse_toolbar);
+//        collapsingToolbarLayout.setTitle(movie.getTitle());
+
         title = (TextView)  findViewById(R.id.movieTitle);
         title.setText(movie.getTitle());
 
