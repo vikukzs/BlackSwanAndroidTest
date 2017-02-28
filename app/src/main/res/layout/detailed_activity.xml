@@ -1,86 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
-    >
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/MyAppbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/Theme.AppCompat"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        android:layout_height="match_parent"
+        android:theme="@style/Transparent"
+        android:fitsSystemWindows="true">
 
-    <RelativeLayout
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapse_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+
+            android:fitsSystemWindows="true">
+            
+            <ImageView
+                android:background="@drawable/ic_star_black_18dp"
+                android:id="@+id/toolbar_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax"/>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/MyToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:popupTheme="@style/Transparent"
+                app:layout_collapseMode="parallax" />
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_gravity="fill_vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/movieTitle" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/movieRating"
-            android:layout_below="@+id/relDate"
-            android:layout_toEndOf="@+id/calendar" />
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/movieTitle" />
 
-        <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/movieOverviewTitle"
-            android:layout_alignStart="@+id/movieOverviewTitle"
-            android:layout_marginTop="13dp"
-            android:id="@+id/movieOverview" />
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/movieRating"
+                    android:layout_below="@+id/relDate"
+                    android:layout_toEndOf="@+id/calendar" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/calendar"
-            android:id="@+id/calendar"
-            android:layout_below="@+id/movieTitle"
-            android:layout_above="@+id/ratingStar"
-            android:layout_alignParentStart="true" />
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/movieOverviewTitle"
+                    android:layout_alignStart="@+id/movieOverviewTitle"
+                    android:layout_marginTop="13dp"
+                    android:id="@+id/movieOverview" />
 
-        <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/relDate"
-            android:layout_below="@+id/movieTitle"
-            android:layout_toEndOf="@+id/calendar" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/calendar"
+                    android:id="@+id/calendar"
+                    android:layout_below="@+id/movieTitle"
+                    android:layout_above="@+id/ratingStar"
+                    android:layout_alignParentStart="true" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_star_black_18dp"
-            android:id="@+id/ratingStar"
-            android:layout_above="@+id/movieOverviewTitle"
-            android:layout_alignParentStart="true"
-            android:layout_toStartOf="@+id/movieRating" />
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/relDate"
+                    android:layout_below="@+id/movieTitle"
+                    android:layout_toEndOf="@+id/calendar" />
 
-        <TextView
-            android:text="Overview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:id="@+id/movieOverviewTitle"
-            android:layout_below="@+id/movieRating"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="11dp" />
-    </RelativeLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_star_black_18dp"
+                    android:id="@+id/ratingStar"
+                    android:layout_above="@+id/movieOverviewTitle"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/movieRating" />
 
+                <TextView
+                    android:text="Overview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:id="@+id/movieOverviewTitle"
+                    android:layout_below="@+id/movieRating"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="11dp" />
+            </RelativeLayout>
 
-</LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
