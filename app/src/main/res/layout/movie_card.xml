@@ -48,15 +48,6 @@
                 android:id="@+id/star_image" />
 
             <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/releaseTextView"
-                android:layout_alignBaseline="@+id/genresTextView"
-                android:layout_alignBottom="@+id/genresTextView"
-                android:layout_alignParentEnd="true" />
-
-            <TextView
                 android:text="7.9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -105,6 +96,25 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
                 android:layout_toStartOf="@+id/ratingTextView" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/releaseTextView"
+                android:layout_alignBaseline="@+id/genresTextView"
+                android:layout_alignBottom="@+id/genresTextView"
+                android:layout_toStartOf="@+id/imageView2" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card_view:srcCompat="@drawable/calendar"
+                android:id="@+id/imageView2"
+                android:layout_below="@+id/star_image"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/summaryTextView"
+                android:layout_alignStart="@+id/star_image" />
 
         </RelativeLayout>
     </RelativeLayout>

@@ -16,28 +16,71 @@
         android:theme="@style/Theme.AppCompat"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="20dp"
-            android:transcriptMode="alwaysScroll">
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/movieTitle" />
 
-            <TextView
-                android:id="@+id/movieTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Title 1"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                />
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/movieRating"
+            android:layout_below="@+id/relDate"
+            android:layout_toEndOf="@+id/calendar" />
 
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/movieOverviewTitle"
+            android:layout_alignStart="@+id/movieOverviewTitle"
+            android:layout_marginTop="13dp"
+            android:id="@+id/movieOverview" />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/calendar"
+            android:id="@+id/calendar"
+            android:layout_below="@+id/movieTitle"
+            android:layout_above="@+id/ratingStar"
+            android:layout_alignParentStart="true" />
 
-        </RelativeLayout>
-    </ScrollView>
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/relDate"
+            android:layout_below="@+id/movieTitle"
+            android:layout_toEndOf="@+id/calendar" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_star_black_18dp"
+            android:id="@+id/ratingStar"
+            android:layout_above="@+id/movieOverviewTitle"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/movieRating" />
+
+        <TextView
+            android:text="Overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:id="@+id/movieOverviewTitle"
+            android:layout_below="@+id/movieRating"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="11dp" />
+    </RelativeLayout>
 
 
 </LinearLayout>

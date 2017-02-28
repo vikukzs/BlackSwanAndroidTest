@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.zsuzsannavikuk.androidtest.activities.DetailedActivity;
 import com.zsuzsannavikuk.androidtest.adapters.MoviesAdapter;
+import com.zsuzsannavikuk.androidtest.models.Genre;
 import com.zsuzsannavikuk.androidtest.models.LoadPopularMoviesResponse;
 import com.zsuzsannavikuk.androidtest.models.Movie;
 import com.zsuzsannavikuk.androidtest.network.MovieDbManager;
@@ -24,9 +25,9 @@ import retrofit2.Response;
 
 public class MainActivity extends Activity {
     LoadPopularMoviesResponse loadPopularMoviesResponse = new LoadPopularMoviesResponse();
-    private List<Movie> movies;
+    List<Movie> movies;
     RecyclerView recyclerView;
-
+    List<Genre> genres;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
 
         MovieDbManager.getInstance().loadPopularMovies(1, new Callback<LoadPopularMoviesResponse>() {
             @Override

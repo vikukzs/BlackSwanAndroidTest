@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zsuzsannavikuk.androidtest.R;
@@ -17,7 +18,8 @@ import com.zsuzsannavikuk.androidtest.models.Movie;
 
 public class DetailedActivity extends AppCompatActivity {
 
-    TextView title;
+    TextView title, releaseDate, rating, overview, overviewTitle;
+    ImageView ratingStar, calendar;
     Movie movie;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -34,6 +36,19 @@ public class DetailedActivity extends AppCompatActivity {
         title = (TextView)  findViewById(R.id.movieTitle);
         title.setText(movie.getTitle());
 
-        
+        releaseDate = (TextView) findViewById(R.id.relDate);
+        releaseDate.setText(movie.getReleaseDateText());
+        rating = (TextView) findViewById(R.id.movieRating);
+        rating.setText(String.valueOf(movie.getAverageVote()));
+        overviewTitle = (TextView) findViewById(R.id.movieOverviewTitle);
+        overview = (TextView) findViewById(R.id.movieOverview);
+        overview.setText(movie.getOverview());
+
+        ratingStar = (ImageView) findViewById(R.id.ratingStar);
+        calendar = (ImageView) findViewById(R.id.calendar);
+
+
+
+
     }
 }
