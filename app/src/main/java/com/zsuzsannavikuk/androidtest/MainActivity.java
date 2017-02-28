@@ -1,24 +1,17 @@
 package com.zsuzsannavikuk.androidtest;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.widget.Toast;
-
-import com.zsuzsannavikuk.androidtest.activities.DetailedActivity;
 import com.zsuzsannavikuk.androidtest.adapters.MoviesAdapter;
-import com.zsuzsannavikuk.androidtest.models.Genre;
 import com.zsuzsannavikuk.androidtest.models.LoadPopularMoviesResponse;
 import com.zsuzsannavikuk.androidtest.models.Movie;
 import com.zsuzsannavikuk.androidtest.network.MovieDbManager;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,7 +20,6 @@ public class MainActivity extends Activity {
     LoadPopularMoviesResponse loadPopularMoviesResponse = new LoadPopularMoviesResponse();
     List<Movie> movies;
     RecyclerView recyclerView;
-    List<Genre> genres;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,14 +43,9 @@ public class MainActivity extends Activity {
                 Toast.makeText(MainActivity.this, "Error: " + t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
     private void setUpRecyclerAdapter() {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(new MoviesAdapter(getApplicationContext(), movies));
     }
-
-
-
 }
