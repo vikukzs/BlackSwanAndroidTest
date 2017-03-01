@@ -46,6 +46,6 @@ public class MainActivity extends Activity {
     }
     private void setUpRecyclerAdapter() {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(new MoviesAdapter(getApplicationContext(), movies));
+        recyclerView.setAdapter(new MoviesAdapter(this, movies));
     }
 }
