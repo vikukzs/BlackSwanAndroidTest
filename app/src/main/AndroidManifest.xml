@@ -16,7 +16,9 @@
         <activity android:name="com.zsuzsannavikuk.androidtest.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.zsuzsannavikuk.androidtest.MainActivity"/>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

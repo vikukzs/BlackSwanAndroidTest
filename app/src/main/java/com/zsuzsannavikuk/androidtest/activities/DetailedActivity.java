@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,6 +41,7 @@ public class DetailedActivity extends AppCompatActivity {
                 .into(toolbarBackground);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapse_toolbar);
 
         title = (TextView)  findViewById(R.id.movieTitle);
@@ -56,6 +58,18 @@ public class DetailedActivity extends AppCompatActivity {
         ratingStar = (ImageView) findViewById(R.id.ratingStar);
         calendar = (ImageView) findViewById(R.id.calendar);
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return true;
+    }
+
+
 }
 
 
